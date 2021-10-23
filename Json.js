@@ -4,11 +4,11 @@ document.getElementById("convert").addEventListener("click", function(){
 
   cadenaFinal = document.getElementById("start").value.split(",").length
   document.getElementById("count").innerHTML +=  "object[" + cadenaFinal + "]";
-  
-  const cadena1 = document.getElementById("start").value.split(",");
+  caracteres = document.getElementById("start").length
+  const cadena1 = document.getElementById("start").value.slice(1,caracteres).split(",")
+  console.log(cadena1)
   for (var i = 0 ; i <= cadena1.length-1; i++) {
-    cadena = cadena1[i]
-    document.getElementById("result").innerHTML += "<div>" + cadena +"</div>";
+    cadena = cadena1[i].split(":")
+    document.getElementById("result").innerHTML += "<code style='color: blue;'>" + cadena[0] +" </code> : <code>" + cadena[1] +" </code><br>";
   }
-
 });
