@@ -1,6 +1,4 @@
-document.getElementById("convert").addEventListener("click", function (){
-  document.getElementById("count").innerHTML = " ";
-  
+document.getElementById("start").addEventListener("input", function (){
   values = document.getElementById("start").value
   result = printItems((JSON.parse(values)))
   document.getElementById("result").innerHTML = result;
@@ -23,9 +21,9 @@ function printItems(valores){
   }else if(Array.isArray(valores)){
     for (var i = 0; i <  valores.length; i++) {
       valores[i]
-      result += "<br>"+ "++" + printItems(valores[i]);
+      result += "<br>"+ "&nbsp&nbsp&nbsp" + printItems(valores[i]);
     }
-    return "[ " + result + "<br>&nbps]"
+    return "[ " +  result + "<br>"
 
   }else if (typeof(valores) == "object") {
     var entries = Object.entries(valores)
@@ -38,6 +36,6 @@ function printItems(valores){
     return "{  <br>" + result +"}"
     
   }else{
-    return  "<code style = 'color:black'>" + valores + "</code>"
+    return  "<code style = 'color:black'>++" + valores + "</code>"
   }
 }
