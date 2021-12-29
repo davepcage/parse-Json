@@ -6,24 +6,24 @@ document.getElementById("start").addEventListener("input", function (){
 });
 
 function iterarSpace(spaceLenght) {
-  var spacer = ""
+  var spacer = "";
   var spaceCharacter = "&nbsp;&nbsp;&nbsp;&nbsp;";
   for (var i =0 ; i < spaceLenght; i++) {
     spacer = spacer + spaceCharacter;
   }
   return spacer;
-};
+}
 
 function comaBr(countComaBr, i){
   if ( i < countComaBr-1) {
      return ",<br>";
   }else{
     return "<br>";
-  };
-};
+  }
+}
 
-function printItems(valores,spaceLenght){
-  spaceLenght++
+function printItems(valores, spaceLenght){
+  spaceLenght++;
   var result = "";
 
   if (typeof(valores) == "string") {
@@ -41,8 +41,8 @@ function printItems(valores,spaceLenght){
   else if(Array.isArray(valores)){
     for (var i = 0; i <  valores.length; i++) {
       var space = iterarSpace(spaceLenght);
-      var formatItems = printItems(valores[i],spaceLenght);
-      var coma = comaBr(valores.length,i);
+      var formatItems = printItems(valores[i], spaceLenght);
+      var coma = comaBr(valores.length, i);
       result +=  space + formatItems + coma;
     }
     spaceLenght--
@@ -53,16 +53,16 @@ function printItems(valores,spaceLenght){
     var entries = Object.entries(valores);
     for (var i =0; i < entries.length; i++ ) {
       var space = iterarSpace(spaceLenght);
-      formatItems = printItems(entries[i][1],spaceLenght);
+      formatItems = printItems(entries[i][1], spaceLenght);
       var coma = comaBr(entries.length,i);
       result +=  space + "<code style='color: blue;'>"+ entries[i][0] + "</code>: " + formatItems + coma;
     }
-    spaceLenght--
-    space = iterarSpace(spaceLenght)
+    spaceLenght--;
+    space = iterarSpace(spaceLenght);
     
-    return  "{ <br>"  +result + space +"}"  
+    return  "{ <br>"  +result + space +"}";
     
   }else{
-    return  "<code style = 'color:black'>" + valores + "</code>"
-  };
-};
+    return  "<code style = 'color:black'>" + valores + "</code>";
+  }
+}
