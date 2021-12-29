@@ -1,7 +1,7 @@
 document.getElementById("start").addEventListener("input", function (){
   var values = document.getElementById("start").value;
   var spaceLenght = 0;
-  var result =  printItems((JSON.parse(values)),spaceLenght);
+  var result =  printItems((JSON.parse(values)), spaceLenght);
   document.getElementById("result").innerHTML =  result;
 });
 
@@ -14,12 +14,11 @@ function iterarSpace(spaceLenght) {
   return spacer;
 };
 
-function comaBr(countComaBr,i){
-  var comaCharacter = ""
+function comaBr(countComaBr, i){
   if ( i < countComaBr-1) {
-     return comaCharacter = ",<br>";
+     return ",<br>";
   }else{
-    return comaCharacter = "<br>";
+    return "<br>";
   };
 };
 
