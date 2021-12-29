@@ -15,12 +15,11 @@ function iterarSpace(spaceLenght) {
   return spacer;
 };
 
-function comaBr(countComaBr,i){
-  var comaCharacter = ""
+function comaBr(countComaBr, i){
   if ( i < countComaBr-1) {
-     return comaCharacter = ",<br>";
+     return ",<br>";
   }else{
-    return comaCharacter = "<br>";
+    return "<br>";
   };
 };
 
