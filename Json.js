@@ -1,7 +1,7 @@
 document.getElementById("start").addEventListener("input", function (){
   var values = document.getElementById("start").value;
   var spaceLenght = 0;
-  var result =  printItems((JSON.parse(values)),spaceLenght);
+  var result =  printItems((JSON.parse(values)), spaceLenght);
   document.getElementById("result").innerHTML = "";
   document.getElementById("result").innerHTML =  result;
 });
